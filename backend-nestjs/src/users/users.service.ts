@@ -14,16 +14,15 @@ export class UsersService {
         return await this.prisma.user.create({
             data: {
                 ...data,
-                password: await bcrypt.hash(data.password, 10)
             }
         })
     }
 
-    async getUsers() {
+     getUsers() {
         return this.prisma.user.findMany()
     }
 
-    async getUserById(id: string) {
+    getUserById(id: string) {
         if (!id) throw new Error('Id no encontrado')
         return this.prisma.user.findUnique({
             where: {
@@ -32,7 +31,7 @@ export class UsersService {
         })
     }
 
-    async getUserByEmail(email: string) {
+    getUserByEmail(email: string) {
         return this.prisma.user.findUnique({
             where: {
                 email: email

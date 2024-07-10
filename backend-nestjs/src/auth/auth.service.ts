@@ -2,7 +2,7 @@ import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/
 import { UsersService } from 'src/users/users.service';
 import { RegisterDto } from './dto/register.dto';
 import { Role_User } from '@prisma/client';
-import * as bcrypt from 'bcryptjs';
+import * as bcryptjs from 'bcryptjs';
 import { LoginDto } from './dto/login.dto';
 import { JwtService } from '@nestjs/jwt';
 
@@ -14,19 +14,21 @@ export class AuthService {
         private readonly jwtService: JwtService
     ) { }
 
-    async register({ first_name, last_name, email, password }: RegisterDto) {
+    async register(registerDto: RegisterDto) {
+        const { email, password } = registerDto;
 
         const userEmail = await this.usersService.getUserByEmail(email)
 
         if (userEmail) throw new BadRequestException('Email ya registrado')
 
+        const hashedPassword = await bcryptjs.hash(password, 10)
+
         await this.usersService.createUser({
-            first_name,
-            last_name,
-            email,
-            password: await bcrypt.hash(password, 10),
+            ...registerDto,
+            password: hashedPassword,
             role: Role_User.USER
         })
+
         return {
             message: 'Usuario registrado con éxito'
         }
@@ -38,7 +40,9 @@ export class AuthService {
 
         if (!user) throw new UnauthorizedException('Email no registrado')
 
-        const isPasswordValid = await bcrypt.compare(password, user.password)
+        const isPasswordValid = await bcryptjs.compare(password, user.password)
+
+        console.log("PASSWORD VALIDATION RESULT, ", { isPasswordValid, inputPassword: password, userPassword: user.password })
 
         if (!isPasswordValid) throw new UnauthorizedException('Datos incorrectos')
 
