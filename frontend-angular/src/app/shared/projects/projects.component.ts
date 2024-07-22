@@ -1,5 +1,5 @@
 import { Component, OnInit, NgModule} from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule, NgFor, NgClass } from '@angular/common';
 
 
 interface Project {
@@ -17,7 +17,7 @@ interface Project {
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgFor,CommonModule],
+  imports: [NgFor,CommonModule,NgClass],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
