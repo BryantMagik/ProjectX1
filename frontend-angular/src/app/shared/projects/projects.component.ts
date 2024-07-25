@@ -2,7 +2,7 @@ import { Component, OnInit, NgModule} from '@angular/core';
 import { CommonModule, NgFor, NgClass } from '@angular/common';
 
 
-interface Project {
+export interface Project {
   id: number;
   name: string;
   description: string;

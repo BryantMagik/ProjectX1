@@ -11,7 +11,6 @@ export const routes: Routes = [
         pathMatch:'full'
     },
     {
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:982898857.
         path: 'login',
         component:LoginComponent
     },

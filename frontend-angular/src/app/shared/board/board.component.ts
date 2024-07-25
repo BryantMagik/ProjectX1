@@ -7,11 +7,12 @@ import { ProjectsComponent } from '../projects/projects.component';
 import { SubtasksComponent } from '../subtasks/subtasks.component';
 import { TasksComponent } from '../tasks/tasks.component';
 import { ProfilesComponent } from '../profiles/profiles.component';
+import { IssuesdetailsComponent } from '../../subpages/issuesdetails/issuesdetails.component';
 
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [CommonModule, TicketComponent,CommentsComponent,IssuesComponent,ProjectsComponent,SubtasksComponent,TasksComponent,ProfilesComponent],
+  imports: [CommonModule, TicketComponent,CommentsComponent,IssuesComponent,ProjectsComponent,SubtasksComponent,TasksComponent,ProfilesComponent,IssuesdetailsComponent],
   templateUrl: './board.component.html',
   styleUrl: './board.component.css'
 })
