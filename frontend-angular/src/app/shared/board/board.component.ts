@@ -11,11 +11,12 @@ import { IssuesdetailsComponent } from '../../subpages/issuesdetails/issuesdetai
 import { ProjectsDetailsComponent } from '../../subpages/projects-details/projects-details.component';
 import { CommentsDetailsComponent } from '../../subpages/comments-details/comments-details.component';
 import { TasksDetailsComponent } from '../../subpages/tasks-details/tasks-details.component';
+import { SubtasksDetailsComponent } from '../../subpages/subtasks-details/subtasks-details.component';
 
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [CommonModule, TicketComponent,CommentsComponent,IssuesComponent,ProjectsComponent,SubtasksComponent,TasksComponent,ProfilesComponent,IssuesdetailsComponent,ProjectsDetailsComponent,CommentsDetailsComponent,TasksDetailsComponent],
+  imports: [CommonModule, TicketComponent,CommentsComponent,IssuesComponent,ProjectsComponent,SubtasksComponent,TasksComponent,ProfilesComponent,IssuesdetailsComponent,ProjectsDetailsComponent,CommentsDetailsComponent,TasksDetailsComponent,SubtasksDetailsComponent],
   templateUrl: './board.component.html',
   styleUrl: './board.component.css'
 })

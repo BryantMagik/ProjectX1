@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { CommonModule, NgFor, NgClass } from '@angular/common';
 
-export interface taskdetail{
+export interface Taskdetail{
   id:number;
   code:string;
   summary:string;
@@ -23,7 +23,7 @@ export interface taskdetail{
   styleUrl: './tasks-details.component.css'
 })
 export class TasksDetailsComponent implements OnInit{
-  taskdetails: taskdetail[] =[
+  taskdetails: Taskdetail[] =[
     {
       id: 1,
       code: 'PRJ001',
