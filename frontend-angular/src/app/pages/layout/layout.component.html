@@ -5,7 +5,58 @@
       <app-navbar></app-navbar>
     </nav>
     <div class="mt-12">
-      <router-outlet></router-outlet>
+      <div *ngIf="mostrar === 1">
+        <div class="min-h-screen">
+          <div class="container mx-auto">
+            <app-profiles></app-profiles>
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrar === 2">
+        <div class="min-h-screen">
+          <div class="container mx-auto">
+            <app-projects></app-projects>
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrar === 3">
+        <div class="min-h-screen">
+          <div class="container mx-auto">
+            <app-tasks></app-tasks>
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrar === 4">
+        <div class="min-h-screen">
+          <div class="container mx-auto">
+            <app-subtasks></app-subtasks>
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrar === 5">
+        <div class="min-h-screen">
+          <div class="container mx-auto">
+            <app-issues></app-issues>
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrar === 6">
+        <div class="min-h-screen">
+          <div class="container mx-auto">
+            <app-comments></app-comments>
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="mostrar !== 1 && mostrar !== 2 && mostrar !== 3 && mostrar !== 4 && mostrar !== 5 && mostrar !== 6">
+        <router-outlet></router-outlet>
+      </div>
+
     </div>
     <div class="text-blue-gray-600">
       <footer class="py-2">

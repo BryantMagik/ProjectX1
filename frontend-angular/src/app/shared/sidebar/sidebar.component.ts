@@ -1,12 +1,33 @@
 import { Component } from '@angular/core';
+import { LayoutComponent } from '../../pages/layout/layout.component';
+import { NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [],
+  imports: [LayoutComponent,NgIf],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
+
 export class SidebarComponent {
+
+  colorear: number = 0;
+
+  cambiarColor(valor: number) {
+    this.colorear = valor;
+  }
+
+  constructor(private mostrarService:LayoutComponent) {}
+
+  setMostrar(value: number) {
+    this.mostrarService.setMostrar(value);
+  }
+
+  ejecutarAcciones(valor: number) {
+    this.setMostrar(valor);
+    this.cambiarColor(valor);
+  }
+  
 
 }
