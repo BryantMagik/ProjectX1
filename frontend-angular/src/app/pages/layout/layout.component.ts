@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
@@ -24,6 +24,8 @@ export class LayoutComponent implements OnInit {
   mostrar$ = this.mostrarSubject.asObservable();
   mostrar!: number;
 
+  @ViewChild(NavbarComponent) navbarComponent!: NavbarComponent;
+
   constructor() {}
 
   ngOnInit() {
@@ -34,5 +36,9 @@ export class LayoutComponent implements OnInit {
 
   setMostrar(value: number) {
     this.mostrarSubject.next(value);
+  }
+
+  getMostrar(): number {
+    return this.mostrar;
   }
 }
