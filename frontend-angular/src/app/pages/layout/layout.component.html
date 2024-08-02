@@ -16,7 +16,13 @@
       <div *ngIf="mostrar === 2">
         <div class="min-h-screen">
           <div class="container mx-auto">
-            <app-projects></app-projects>
+            <div *ngIf="mirando === 0 || mirando === 2 || mirando === 3 || mirando === 4 || mirando === 5">
+              <app-projects></app-projects>
+            </div>
+            <div *ngIf="mirando === 1">
+              <app-projects-details></app-projects-details>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -24,7 +30,13 @@
       <div *ngIf="mostrar === 3">
         <div class="min-h-screen">
           <div class="container mx-auto">
-            <app-tasks></app-tasks>
+            <div *ngIf="mirando === 0 || mirando === 1 || mirando === 3 || mirando === 4 || mirando === 5">
+              <app-tasks></app-tasks>
+            </div>
+            <div *ngIf="mirando === 2">
+              <app-tasks-details></app-tasks-details>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -32,7 +44,12 @@
       <div *ngIf="mostrar === 4">
         <div class="min-h-screen">
           <div class="container mx-auto">
-            <app-subtasks></app-subtasks>
+            <div *ngIf="mirando === 0 || mirando === 1 || mirando === 2 || mirando === 4 || mirando === 5">
+              <app-subtasks></app-subtasks>
+            </div>
+            <div *ngIf="mirando === 3">
+              <app-subtasks-details></app-subtasks-details>
+            </div>
           </div>
         </div>
       </div>
@@ -40,7 +57,12 @@
       <div *ngIf="mostrar === 5">
         <div class="min-h-screen">
           <div class="container mx-auto">
-            <app-issues></app-issues>
+            <div *ngIf="mirando === 0 || mirando === 1 || mirando === 2 || mirando === 3 || mirando === 5">
+              <app-issues></app-issues>
+            </div>
+            <div *ngIf="mirando === 4">
+              <app-issuesdetails></app-issuesdetails>
+            </div>
           </div>
         </div>
       </div>
@@ -48,12 +70,17 @@
       <div *ngIf="mostrar === 6">
         <div class="min-h-screen">
           <div class="container mx-auto">
-            <app-comments></app-comments>
+            <div *ngIf="mirando === 0 || mirando === 1 || mirando === 2 || mirando === 3 || mirando === 4">
+              <app-comments></app-comments>
+            </div>
+            <div *ngIf="mirando === 5">
+              <app-comments-details></app-comments-details>
+            </div>
           </div>
         </div>
       </div>
       
-      <div *ngIf="mostrar !== 1 && mostrar !== 2 && mostrar !== 3 && mostrar !== 4 && mostrar !== 5 && mostrar !== 6">
+      <div *ngIf="mostrar === 0">
         <router-outlet></router-outlet>
       </div>
 

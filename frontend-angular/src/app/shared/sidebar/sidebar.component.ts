@@ -18,10 +18,10 @@ export class SidebarComponent {
     this.colorear = valor;
   }
 
-  constructor(private mostrarService:LayoutComponent) {}
+  constructor(private LayoutComponent:LayoutComponent) {}
 
   setMostrar(value: number) {
-    this.mostrarService.setMostrar(value);
+    this.LayoutComponent.setMostrar(value);
   }
 
   ejecutarAcciones(valor: number) {

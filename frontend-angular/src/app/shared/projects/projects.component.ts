@@ -1,5 +1,6 @@
 import { Component, OnInit, NgModule} from '@angular/core';
 import { CommonModule, NgFor, NgClass } from '@angular/common';
+import { LayoutComponent } from '../../pages/layout/layout.component';
 
 
 export interface Project {
@@ -17,7 +18,7 @@ export interface Project {
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgFor,CommonModule,NgClass],
+  imports: [NgFor,CommonModule,NgClass,LayoutComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
@@ -41,7 +42,15 @@ export class ProjectsComponent implements OnInit {
     // Añade más proyectos aquí
   ];
 
-  constructor() { }
+  constructor(private LayoutComponent:LayoutComponent) {}
+
+  setMostrar(value: number) {
+    this.LayoutComponent.setMostrar(value);
+  }
+
+  setMirando(value: number) {
+    this.LayoutComponent.setMirando(value);
+  }
 
   ngOnInit(): void {
   }
