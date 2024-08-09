@@ -16,6 +16,12 @@ export class NavbarComponent implements OnInit {
 
   mirando: number = 0;
   textos2: string[] = [' ','Projects-Details', 'Tasks-Details', 'Subtasks-Details', 'Issues-Details', 'Comments-Details'];
+
+  isDropdownOpen: boolean = false;
+
+  toggleDropdown(): void {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
  
   constructor(private LayoutComponent: LayoutComponent) {}
 
