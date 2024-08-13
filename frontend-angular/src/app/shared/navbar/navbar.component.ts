@@ -11,19 +11,20 @@ import { NgIf } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
 
+  isDropdownOpen: boolean = false;
+
   mostrar: number = 0;
+  colorear:number =0;
   textos: string[] = ['Home', 'Profiles', 'Projects', 'Tasks', 'Subtasks', 'Issues', 'Comments'];
 
   mirando: number = 0;
   textos2: string[] = [' ','Projects-Details', 'Tasks-Details', 'Subtasks-Details', 'Issues-Details', 'Comments-Details'];
-
-  isDropdownOpen: boolean = false;
+ 
+  constructor(private LayoutComponent: LayoutComponent) {}
 
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
- 
-  constructor(private LayoutComponent: LayoutComponent) {}
 
   setMostrar(value: number) {
     this.LayoutComponent.setMostrar(value);

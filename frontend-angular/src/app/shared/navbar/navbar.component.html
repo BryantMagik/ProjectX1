@@ -99,12 +99,13 @@
   </div>
   <div *ngIf="isDropdownOpen" class="absolute top-12 left-0 w-full bg-white shadow-lg rounded-lg z-50 xl:hidden">
     <ul class="flex flex-col">
-      <li><a href="/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dashboard</a></li>
-      <li><a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a></li>
-      <li><a href="/tasks" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tasks</a></li>
-      <li><a href="/subtasks" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Subtasks</a></li>
-      <li><a href="/issues" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Issues</a></li>
-      <li><a href="/comments" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Comments</a></li>
+      <li><a  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" (click)="setMostrar(0)">Dashboard</a></li>
+      <li><a  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" (click)="setMostrar(1)">Profile</a></li>
+      <li><a  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" (click)="setMostrar(2)">Projects</a></li>
+      <li><a  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" (click)="setMostrar(3)">Tasks</a></li>
+      <li><a  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" (click)="setMostrar(4)">Subtasks</a></li>
+      <li><a  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" (click)="setMostrar(5)">Issues</a></li>
+      <li><a  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" (click)="setMostrar(6)">Comments</a></li>
     </ul>
   </div>
 </div>
