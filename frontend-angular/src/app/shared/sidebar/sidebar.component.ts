@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { LayoutComponent } from '../../pages/layout/layout.component';
 import { NgIf} from '@angular/common';
 
@@ -10,7 +10,9 @@ import { NgIf} from '@angular/common';
   styleUrl: './sidebar.component.css'
 })
 
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+
+  mostrar = 0;
 
   colorear: number = 0;
 
@@ -27,6 +29,13 @@ export class SidebarComponent {
   ejecutarAcciones(valor: number) {
     this.setMostrar(valor);
     this.cambiarColor(valor);
+  }
+
+  ngOnInit() {
+    this.LayoutComponent.mostrar$.subscribe(valor => {
+        this.mostrar = valor;
+    });
+
   }
   
 
