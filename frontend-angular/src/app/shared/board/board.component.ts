@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TicketComponent } from '../ticket/ticket.component';
 import { CommentsComponent } from '../comments/comments.component';
