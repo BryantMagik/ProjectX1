@@ -11,6 +11,8 @@ import { NgIf } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
 
+  isUsernameDropdownOpen = false;
+
   isDropdownOpen: boolean = false;
 
   mostrar: number = 0;
@@ -21,6 +23,10 @@ export class NavbarComponent implements OnInit {
   textos2: string[] = [' ','Projects-Details', 'Tasks-Details', 'Subtasks-Details', 'Issues-Details', 'Comments-Details'];
  
   constructor(private LayoutComponent: LayoutComponent) {}
+
+  toggleUsernameDropdown() {
+    this.isUsernameDropdownOpen = !this.isUsernameDropdownOpen;
+  }
 
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;
