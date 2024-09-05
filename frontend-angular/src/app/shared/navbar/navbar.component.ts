@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { LayoutComponent } from '../../pages/layout/layout.component';
 import { NgIf } from '@angular/common';
+import { NotificationsComponent } from '../notifications/notifications.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [LayoutComponent,NgIf],
+  imports: [LayoutComponent,NgIf,NotificationsComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit {
+
+  isNotificationOpen = false;
 
   isUsernameDropdownOpen = false;
 
@@ -23,6 +26,10 @@ export class NavbarComponent implements OnInit {
   textos2: string[] = [' ','Projects-Details', 'Tasks-Details', 'Subtasks-Details', 'Issues-Details', 'Comments-Details'];
  
   constructor(private LayoutComponent: LayoutComponent) {}
+
+  toggleNotificationDropdown(){
+    this.isNotificationOpen = !this.isNotificationOpen;
+  }
 
   toggleUsernameDropdown() {
     this.isUsernameDropdownOpen = !this.isUsernameDropdownOpen;
